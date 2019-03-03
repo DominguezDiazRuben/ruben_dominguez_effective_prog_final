@@ -5,7 +5,7 @@ import pickle as pkl
 import matplotlib.pyplot as plt
 
 # -- Read data.
-data_to_output = pickle.load(open(ppj("OUT_ANALYSIS","data_to_output.pkl"),"rb"))
+data_to_output = pkl.load(open(ppj("OUT_ANALYSIS","data_to_output.pkl"),"rb"))
 # -- Prepare dataframes as if where passed as latex tables
 
 # -- Read out dictionary
@@ -85,19 +85,19 @@ age_partition_table.columns = rename_age
 
 # --- Save to latex
 
-with open(ppj("OUT_TABLES", "net_worth_deciles_table.tex"), "wb") as tf:
+with open(ppj("OUT_TABLES", "net_worth_deciles_table.tex"), "w") as tf:
      tf.write(net_worth_deciles_table.to_latex())
 
-with open(ppj("OUT_TABLES", "net_worth_quintiles_table.tex"), "wb") as tf:
+with open(ppj("OUT_TABLES", "net_worth_quintiles_table.tex"), "w") as tf:
      tf.write(net_worth_quintiles_table.to_latex())
      
-with open(ppj("OUT_TABLES", "income_deciles_table.tex"), "wb") as tf:
+with open(ppj("OUT_TABLES", "income_deciles_table.tex"), "w") as tf:
      tf.write(income_deciles_table.to_latex())
 
-with open(ppj("OUT_TABLES", "income_quintiles_table.tex"), "wb") as tf:
+with open(ppj("OUT_TABLES", "income_quintiles_table.tex"), "w") as tf:
      tf.write(income_quintiles_table.to_latex())
      
-with open(ppj("OUT_TABLES", "age_partition.tex"), "wb") as tf:
+with open(ppj("OUT_TABLES", "age_partition.tex"), "w") as tf:
      tf.write(age_partition.to_latex())
      
 ###############################################################################
@@ -125,4 +125,4 @@ plt.savefig(ppj("OUT_FIGURES","lorenz_income.png"))
 plt.figure()
 plt.plot(np.linspace(0.0, 1.0, lorenz_net_worth.size), lorenz_net_worth)
 plt.plot([0,1], [0,1])
-plt.savefig(ppj("OUT_FIGURES","lorenz_networth.png")')
+plt.savefig(ppj("OUT_FIGURES","lorenz_networth.png"))
