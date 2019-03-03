@@ -2,22 +2,20 @@
 
 
 def build(ctx):
-
-    for model in 'baseline', 'max_moves_2':
-
         ctx(
             features='run_py_script',
-            source='plot_locations.py',
+            source='final.py',
             deps=[
-                ctx.path_to(ctx, 'OUT_ANALYSIS', 'schelling_{}.pickle'.format(model)),
-                ctx.path_to(ctx, 'IN_MODEL_SPECS', '{}.json'.format(model))
+                ctx.path_to(ctx, 'OUT_ANALYSIS', 'data_to_output.pkl'),
             ],
-            target=ctx.path_to(ctx, 'OUT_FIGURES', 'schelling_{}.png'.format(model)),
-            append=model,
-            name='plot_locations_{}'.format(model)
+            target=[ctx.path_to(ctx, 'OUT_FIGURES', 'histogram_networth.png'),
+            ctx.path_to(ctx, 'OUT_FIGURES', 'histogram_income.png'),
+            ctx.path_to(ctx, 'OUT_FIGURES', 'lorenz_income.png'),
+            ctx.path_to(ctx, 'OUT_FIGURES', 'lorenz_networth.png'),
+            ctx.path_to(ctx, 'OUT_TABLES', 'net_worth_deciles_table.tex'),
+            ctx.path_to(ctx, 'OUT_TABLES', 'net_worth_quintiles_table.tex'),
+            ctx.path_to(ctx, 'OUT_TABLES', 'income_deciles_table.tex'),
+            ctx.path_to(ctx, 'OUT_TABLES', 'income_quintiles_table.tex'),
+            ctx.path_to(ctx, 'OUT_TABLES', 'age_partition.tex'),
+            ],
         )
-
-
-    # from src.final.project_dependency_graph import make_project_dependency_graph
-
-    # ctx.add_post_fun(make_project_dependency_graph)
