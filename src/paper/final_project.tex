@@ -63,7 +63,7 @@
 \maketitle
 
 \begin{abstract}
-	Some abstract here.
+	This research project uses the Survey of Consumer Finances 2016 to present some summary stastitics about income and wealth inequality. In addition, it reports the average income, wealth, age and balance sheet composition of households along the income and wealth distribution, as well as over the business cycle.
 \end{abstract}
 \clearpage
 
@@ -71,12 +71,13 @@
 \label{sec:introduction}
 
 \section{Main Results.}
+\label{sec:mainresults}
 
 \begin{figure}
     \caption{Lorenz Curve for Income}
     
     \includegraphics[width=\textwidth]{../../out/figures/lorenz_income}
-
+    \label{fig:lorincome}
 \end{figure}
 
 
@@ -84,6 +85,7 @@
     \caption{Lorenz Curve for Net Worth}
     
     \includegraphics[width=\textwidth]{../../out/figures/lorenz_networth}
+    \label{fig:lornetworth}
 
 \end{figure}
 
@@ -91,27 +93,30 @@
     \caption{Histogram for Income}
     
     \includegraphics[width=\textwidth]{../../out/figures/histogram_income}
-
+    \label{fig:histincome}
 \end{figure}
 
 \begin{figure}
     \caption{Histogram for Net Worth}
     
     \includegraphics[width=\textwidth]{../../out/figures/histogram_networth}
-
+    \label{fig:histnetworth}
 \end{figure}
 
 \begin{table}
     \resizebox{\textwidth}{!}{\input{../../out/tables/income_quintiles_table}}
+    \label{tab:quintilesincome}
 \end{table}
 
 
 \begin{table}
     \resizebox{\textwidth}{!}{\input{../../out/tables/net_worth_quintiles_table}}
+    \label{tab:quintilesnetworth}
 \end{table}
 
 \begin{table}
     \resizebox{\textwidth}{!}{\input{../../out/tables/age_partition}}
+    \label{tab:agepartition}
 \end{table}
 
 \section{Conclusions.}
