@@ -98,7 +98,7 @@ with open(ppj("OUT_TABLES", "income_quintiles_table.tex"), "w") as tf:
      tf.write(income_quintiles_table.to_latex())
      
 with open(ppj("OUT_TABLES", "age_partition.tex"), "w") as tf:
-     tf.write(age_partition.to_latex())
+     tf.write(age_partition_table.to_latex())
      
 ###############################################################################
 ############### Prepare Histogram and Lorez  ##################################
