@@ -217,4 +217,4 @@ data_to_output = {'average_net_worth_partition_quintiles':average_net_worth_part
 # -- save dictionary
 
 with open(ppj("OUT_ANALYSIS", "data_to_output.pkl"), "wb") as out_file:
-    pickle.dump(data_to_output, out_file)
+    pkl.dump(data_to_output, out_file)
