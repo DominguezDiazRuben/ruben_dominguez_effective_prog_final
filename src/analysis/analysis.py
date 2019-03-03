@@ -186,8 +186,8 @@ for variable_iterate in portfolio_variables:
     average_net_worth_partition_quintiles[variable_iterate] = average_net_worth_partition_quintiles[variable_iterate]/average_net_worth_partition_quintiles['net_worth']*100; 
     average_income_partition_quintiles[variable_iterate] = average_income_partition_quintiles[variable_iterate]/average_income_partition_quintiles['net_worth']*100; 
     average_age_partition[variable_iterate] = average_age_partition[variable_iterate]/average_age_partition['net_worth']*100; 
-    average_net_worth_partition_deciles[variable_iterate] = average_net_worth_partition_quintiles[variable_iterate]/average_net_worth_partition_quintiles['net_worth']*100; 
-    average_income_partition_deciles[variable_iterate] = average_income_partition_quintiles[variable_iterate]/average_income_partition_quintiles['net_worth']*100; 
+    average_net_worth_partition_deciles[variable_iterate] = average_net_worth_partition_deciles[variable_iterate]/average_net_worth_partition_deciles['net_worth']*100; 
+    average_income_partition_deciles[variable_iterate] = average_income_partition_deciles[variable_iterate]/average_income_partition_deciles['net_worth']*100; 
 
 
 

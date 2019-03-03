@@ -60,9 +60,9 @@ age_partition_table[variables_in_thousands] = age_partition_table[variables_in_t
 # -- Present values as integers.age_partition_table
 
 net_worth_quintiles_table = net_worth_quintiles_table.astype(int)
-#net_worth_deciles_table = net_worth_deciles_table.astype(int)
+net_worth_deciles_table = net_worth_deciles_table.astype(int)
 income_quintiles_table = net_worth_quintiles_table.astype(int)
-#income_deciles_table = net_worth_deciles_table.astype(int)
+income_deciles_table = net_worth_deciles_table.astype(int)
 age_partition_table = age_partition_table.astype(int)
 
 
