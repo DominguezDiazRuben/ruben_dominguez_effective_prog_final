@@ -48,6 +48,24 @@ income_quintiles_table = income_quintiles[variables_to_keep]
 income_deciles_table = income_deciles[variables_to_keep]
 age_partition_table = age_partition[variables_to_keep]
 
+# -- Some variables in thousands for readability.
+
+variables_in_thousands = ['net_worth','income_total']
+net_worth_quintiles_table[variables_in_thousands] = net_worth_quintiles_table[variables_in_thousands]/1000
+net_worth_deciles_table[variables_in_thousands] = net_worth_deciles_table[variables_in_thousands]/1000 
+income_quintiles_table[variables_in_thousands] = income_quintiles_table[variables_in_thousands]/1000
+income_deciles_table[variables_in_thousands] = income_deciles_table[variables_in_thousands]/1000 
+age_partition_table[variables_in_thousands] = age_partition_table[variables_in_thousands]/1000
+
+# -- Present values as integers.age_partition_table
+
+net_worth_quintiles_table = net_worth_quintiles_table.astype(int)
+#net_worth_deciles_table = net_worth_deciles_table.astype(int)
+income_quintiles_table = net_worth_quintiles_table.astype(int)
+#income_deciles_table = net_worth_deciles_table.astype(int)
+age_partition_table = age_partition_table.astype(int)
+
+
 # -- Rename columns to present.
 
 rename_columns = ['Net Worth','Income','Age','Wages (% of income)',
