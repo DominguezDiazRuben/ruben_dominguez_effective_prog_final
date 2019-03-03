@@ -1,0 +1,11 @@
+#! python
+
+import os
+def build(ctx):
+        # Illustrate use of run_py_script with automatic model specification.
+        abspath = os.path.join(ctx.path.abspath(), 'test_myfunctions.py')
+        ctx(features='run_py_script',
+            source='test_myfunctions.py',
+            deps=[ctx.path_to(ctx,'IN_FUNCTIONS','myfunctions.py')],
+            append = abspath,
+        )
