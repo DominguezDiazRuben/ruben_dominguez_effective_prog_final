@@ -36,7 +36,7 @@ def generate_bins(endpoints,myvariable):
 
 
 def generate_densities(myweight,myvariable):
-    """ Computed the empirical pdf and cdf.
+    """ Computes the empirical pdf and cdf.
 
      Args:
         myweights: array containing the population weights.

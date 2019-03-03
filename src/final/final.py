@@ -13,7 +13,7 @@ The module can be broadly subdivided into two different parts.
 	  Second, it express income and net worth in thousands so that they fit nicely in the table.
 	  Third, due to the large amount of decimals is converts values to integers. Fourth, it 
 	  renames variables as we want them to appear in the paper. Fith, it exports to latex the 
-		following tables:
+	  following tables:
 		* Deciles of Net Worth Distribution.
 		* Deciles of Income Distribution.
 		* Quintiles of Net Worth Distribution.
