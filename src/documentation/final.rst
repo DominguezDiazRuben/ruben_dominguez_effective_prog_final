@@ -11,5 +11,5 @@ Documentation of the code in *src.final*.
 final.py
 =================
 
-.. automodule:: src.final.plot_locations
+.. automodule:: src.final.final
     :members:

@@ -1,8 +1,8 @@
 .. _functions:
 
-**********
+*************
 Functions
-**********
+*************
 
 
 The directory *src.functions* contains the module *myfunctions.py*, which is used during the *analysis step*.
@@ -11,5 +11,5 @@ The directory *src.functions* contains the module *myfunctions.py*, which is use
 functions.py
 ============================================
 
-.. automodule:: src.model_code.update
+.. automodule:: src.functions.myfunctions
     :members:

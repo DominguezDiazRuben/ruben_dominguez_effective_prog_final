@@ -16,5 +16,6 @@ Welcome to the Effective Programming Final Project project's documentation!
     analysis
     final
     paper
+    functions
     tests
     references

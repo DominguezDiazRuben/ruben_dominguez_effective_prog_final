@@ -98,7 +98,7 @@ def generate_gini(myvariable, myweights, mynobs):
 
 
 def generate_averages(mydataset,myweight,mygroup=None):
-        """ Computes the averages of multible variables for a given group.
+    """ Computes the averages of multible variables for a given group.
      Args:
         mydataset: Data Frame containing the dataset.
         myweight: string indicating the name of the column that contains the weights.
