@@ -1,12 +1,12 @@
-.. _analysis:
+.. _test_functions:
 
 ************************************
-Analysis
+Tests
 ************************************
 
-The directory *src.analysis* contains the python codes for the project's main part.
+The directory *src.test_functions* contains test for the functions.
 
-analysis.py
+test_myfunctions.py
 =================
 
 .. automodule:: src.analysis.analysis

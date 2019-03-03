@@ -16,7 +16,5 @@ Welcome to the Effective Programming Final Project project's documentation!
     analysis
     final
     paper
-    model_code
-    model_specs
-    library
+    tests
     references

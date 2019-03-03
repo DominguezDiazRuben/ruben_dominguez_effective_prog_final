@@ -4,9 +4,6 @@
 Original data
 *************
 
-
-Documentation of the different datasets in *original_data*.
-
-In the original data section you would store the raw data, which you should not manipulate to ensure reproducibility.
-
-If you want to include multiple data sets, you can also create subfolders for the sake of a clear structure.
+The directory *original_data* contains the original data of the *Survey of Consumer Finances*
+for the wave 2016, is *Stata* format. It can be freely downloaded from the website of the
+Board of Governors of the Federal Reserve System.
