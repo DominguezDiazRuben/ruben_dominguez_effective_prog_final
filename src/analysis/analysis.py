@@ -1,14 +1,14 @@
+from bld.project_paths import project_paths_join as ppj
 import pandas as pd
 import numpy as np
 import pickle as pkl
-from myfunctions import generate_bins
-from myfunctions import generate_densities
-from myfunctions import generate_gini
-from myfunctions import generate_averages
-
-sfc_clean_pd = pd.read_pickle('../data_management/sfc_clean_pd.pkl')
+from src.functions.myfunctions import generate_bins
+from src.functions.myfunctions import generate_densities
+from src.functions.myfunctions import generate_gini
+from src.functions.myfunctions import generate_averages
 
 
+sfc_clean_pd = pkl.load(open(ppj("OUT_DATA", "sfc_clean_pd.pkl"), "rb"))
 
 ###############################################################################
 # Create population partitions by net worth, income and age ###################
@@ -215,7 +215,6 @@ data_to_output = {'average_net_worth_partition_quintiles':average_net_worth_part
 
 
 # -- save dictionary
-f = open("data_to_output.pkl","wb")
-pkl.dump(data_to_output,f)
-f.close()
 
+with open(ppj("OUT_ANALYSIS", "data_to_output.pkl"), "wb") as out_file:
+    pickle.dump(data_to_output, out_file)

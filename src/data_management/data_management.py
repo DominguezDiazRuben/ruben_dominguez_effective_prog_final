@@ -3,12 +3,12 @@
 import numpy as np
 import pandas as pd
 import pickle as pk
-
+from bld.project_paths import project_paths_join as ppj
 
 
 # -- Load data.
 
-sfc16 = pd.read_stata("../data/sfc2016.dta") 
+sfc16 = pd.read_stata(ppj("IN_DATA","sfc2016.dta"))
 
 
 # -- Variables that we want to work with.
@@ -103,4 +103,6 @@ sfc_clean_pd.drop(sfc_clean_pd[sfc_clean_pd.hh_age > 80].index,inplace = True)
 
 # -- Save to pickle.
 
-sfc_clean_pd.to_pickle('sfc_clean_pd.pkl')
+with open(ppj("OUT_DATA", "sfc_clean_pd.pkl"), "wb") as out_file:
+    pickle.dump(sfc_clean_pd, out_file)
+
