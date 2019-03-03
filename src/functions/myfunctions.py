@@ -9,6 +9,7 @@ import pandas as pd
 
 def generate_bins(endpoints,myvariable):
     """ Generates the partition of a sample.
+
      Args:
         endpoints: array of containing the end points of the bins in which the sample wants to be divided.
         myvariable: array containing the sorted variable according the which the sample wants to be divided.
@@ -35,7 +36,8 @@ def generate_bins(endpoints,myvariable):
 
 
 def generate_densities(myweight,myvariable):
-    """ Computed the empirical pdf and cdf..
+    """ Computed the empirical pdf and cdf.
+
      Args:
         myweights: array containing the population weights.
         myvariable: array containing the variable.
@@ -64,6 +66,7 @@ def generate_densities(myweight,myvariable):
 
 def generate_gini(myvariable, myweights, mynobs): 
     """ Computes the Gini Coefficient and the Lorenz Curve for a distribution.
+
      Args:
         mynobs: scalar that indicates the number of observations.
         myweights: array containing weights to applied to the variables.
@@ -89,7 +92,6 @@ def generate_gini(myvariable, myweights, mynobs):
     for i in np.arange(1, n):
         ginico = ginico + pxi.iloc[i] * pci.iloc[i - 1] - pci.iloc[i] * pxi.iloc[i - 1]
         
-#    lorenzcur_step = weighted_variable.cumsum()/weighted_variable.sum()
     lorenzcur_step = pxi
     lorenzcur = np.concatenate(([0],lorenzcur_step))
     
@@ -99,6 +101,7 @@ def generate_gini(myvariable, myweights, mynobs):
 
 def generate_averages(mydataset,myweight,mygroup=None):
     """ Computes the averages of multible variables for a given group.
+
      Args:
         mydataset: Data Frame containing the dataset.
         myweight: string indicating the name of the column that contains the weights.
