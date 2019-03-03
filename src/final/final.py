@@ -20,7 +20,8 @@ The module can be broadly subdivided into two different parts.
 		* Quintiles of Income Distribution.
 		* Age Distribution.
 
-	* Prepare Histograms and Lorenz: it generates two histograms and two Lorenz curves that are reported in the paper:
+	* Prepare Histograms and Lorenz: it generates two histograms and two Lorenz curves 
+	  that are reported in the paper:
 		* Histogram of Income.
 		* Histogram of Net Worth.
 		* Lorenz curve of Income.
