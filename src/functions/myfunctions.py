@@ -1,7 +1,22 @@
+"""
+The module *myfunctions* contains the functions used during the analysis step-.
+
+"""
+
+
 import numpy as np
 import pandas as pd
 
 def generate_bins(endpoints,myvariable):
+    """ Generates the partition of a sample.
+     Args:
+        endpoints: array of containing the end points of the bins in which the sample wants to be divided.
+        myvariable: array containing the sorted variable according the which the sample wants to be divided.
+
+     Returns:
+         store_bin: array containing to which bin belongs each observation.
+
+     """
     store_position = np.zeros(shape=len(endpoints))
     store_bin = np.zeros(shape=len(myvariable))
     for i,endpoints_iterate in enumerate(endpoints): 
@@ -20,6 +35,17 @@ def generate_bins(endpoints,myvariable):
 
 
 def generate_densities(myweight,myvariable):
+    """ Computed the empirical pdf and cdf..
+     Args:
+        myweights: array containing the population weights.
+        myvariable: array containing the variable.
+
+     Returns:
+         variable_pdf: array containing the empirical pdf.
+         variable_cdf: array containing the empirical cdf.
+
+     """
+
     # zip weights and variable
     zipped_pairs= zip(myvariable, myweight)
     # sort weights according to variable
@@ -37,6 +63,17 @@ def generate_densities(myweight,myvariable):
 
 
 def generate_gini(myvariable, myweights, mynobs): 
+    """ Computes the Gini Coefficient and the Lorenz Curve for a distribution.
+     Args:
+        mynobs: scalar that indicates the number of observations.
+        myweights: array containing weights to applied to the variables.
+        myvariable: array containing the variable of which we want to compute the statistics.
+
+     Returns:
+         ginico: scalar containing the Gini Coefficient.
+         lorenzcur: array containing the Lorenz Curve.
+
+     """
 
     x = myvariable
     w = pd.Series(myweights).reset_index(drop=True)
@@ -61,6 +98,17 @@ def generate_gini(myvariable, myweights, mynobs):
 
 
 def generate_averages(mydataset,myweight,mygroup=None):
+        """ Computes the averages of multible variables for a given group.
+     Args:
+        mydataset: Data Frame containing the dataset.
+        myweight: string indicating the name of the column that contains the weights.
+        mygroup (optional): string indicating by which group we want to compute the averages.
+
+     Returns:
+         myaverages: Data Frame containing the averages of each variable for each group (if any).
+
+     """
+
     myvariables = list(mydataset)
     if mygroup is None:
         myaverages = pd.DataFrame(columns=myvariables,index=range(1,2))
