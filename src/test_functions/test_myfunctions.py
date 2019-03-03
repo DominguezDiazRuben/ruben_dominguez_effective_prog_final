@@ -1,10 +1,10 @@
 ### Define some tests
-
+import sys
 import pytest
 import pandas as pd
 import numpy as np
 from pandas.testing import assert_frame_equal, assert_series_equal
-from myfunctions import generate_bins, generate_densities,generate_gini,generate_averages
+from src.functions.myfunctions import generate_bins, generate_densities,generate_gini,generate_averages
 
 def setup_mytest():
     sfc_test = pd.DataFrame(data=[[1,2,3,4,5],
@@ -65,4 +65,7 @@ def test_generate_averages():
     expected_out = expected_output()
     actual_average = generate_averages(sfc_test,'hh_weights')
     assert_frame_equal(actual_average, expected_out['average_total'])
-    
+
+if __name__ == '__main__':
+    status = pytest.main([sys.argv[1]])
+    sys.exit(status)
