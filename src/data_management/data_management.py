@@ -1,5 +1,32 @@
-### clean data to select variables used later on during the analysis.
+"""
+This module called *data_management* prepares the inputs for the 
+*analysis step*.  
 
+First, it loads the raw data from the
+folder *original_data*. 
+
+Second, since the original dataset it large, the 
+goal is to keep the variables of interest so that we don't have
+to carry out the whole analysis with a heavy dataframe. The are contained
+in my_variables.
+
+Third, it renames the variables that we are going to use to 
+more user-friendly names, such that we can access them more
+easily without need to look for them in manual repeatedly.
+
+Fourth, it generates some additional variables that are interesting
+for the final results. There are:
+   * income_total: a broader measure of total income.
+   * income_capital: a measure of total capital income.
+   * net_home_equity: total housing assets minus total secured debt.
+   * deb_non_secured: total debt minus secured debt.
+
+Finally it saves all these elements together into
+a dataframe called *sfc_clean_pd* and saves it to the folder
+*OUT_DATA*. This object will be the input for the analysis step.
+
+
+"""
 import numpy as np
 import pandas as pd
 import pickle as pkl
@@ -67,6 +94,7 @@ hh_employment_status = sfc16['OCCAT1']
 hh_id = sfc16['YY1']
 hh_weight = sfc16['wgt']
 
+# -- Bundle everything into a dictionary.
 
 sfc_clean_dict = {'income_wage':income_wage,
                            'income_bussiness':income_bussiness,
@@ -90,6 +118,8 @@ sfc_clean_dict = {'income_wage':income_wage,
                            'hh_employment_status':hh_employment_status,
                            'hh_id':hh_id,
                            'hh_weight':hh_weight}
+
+# -- Convert to data frame and set index.
 
 sfc_clean_pd = pd.DataFrame(sfc_clean_dict)
 sfc_clean_pd.set_index('hh_id',inplace=True)
