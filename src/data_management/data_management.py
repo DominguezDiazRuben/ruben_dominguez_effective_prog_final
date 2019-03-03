@@ -2,7 +2,7 @@
 
 import numpy as np
 import pandas as pd
-import pickle as pk
+import pickle as pkl
 from bld.project_paths import project_paths_join as ppj
 
 
@@ -104,5 +104,5 @@ sfc_clean_pd.drop(sfc_clean_pd[sfc_clean_pd.hh_age > 80].index,inplace = True)
 # -- Save to pickle.
 
 with open(ppj("OUT_DATA", "sfc_clean_pd.pkl"), "wb") as out_file:
-    pickle.dump(sfc_clean_pd, out_file)
+    pkl.dump(sfc_clean_pd, out_file)
 
