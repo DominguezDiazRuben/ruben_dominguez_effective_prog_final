@@ -16,9 +16,7 @@ def set_project_paths(ctx):
     pp = OrderedDict()
     pp["PROJECT_ROOT"] = "."
     pp["IN_DATA"] = "src/original_data/"
-    pp["IN_MODEL_CODE"] = "src/model_code"
     pp["IN_FUNCTIONS"] = "src/functions"
-    pp["IN_MODEL_SPECS"] = "src/model_specs"
     pp["BLD"] = ""
     pp["OUT_DATA"] = f"{out}/out/data"
     pp["OUT_ANALYSIS"] = f"{out}/out/analysis"

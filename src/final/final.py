@@ -1,12 +1,11 @@
+from bld.project_paths import project_paths_join as ppj
 import numpy as np
 import pandas as pd
 import pickle as pkl
 import matplotlib.pyplot as plt
 
 # -- Read data.
-
-data_to_output = pkl.load( open( "../analysis/data_to_output.pkl", "rb" ) )
-
+data_to_output = pickle.load(open(ppj("OUT_ANALYSIS","data_to_output.pkl"),"rb"))
 # -- Prepare dataframes as if where passed as latex tables
 
 # -- Read out dictionary
@@ -86,19 +85,19 @@ age_partition_table.columns = rename_age
 
 # --- Save to latex
 
-with open('net_worth_deciles_table.tex', 'w') as tf:
+with open(ppj("OUT_TABLES", "net_worth_deciles_table.tex"), "wb") as tf:
      tf.write(net_worth_deciles_table.to_latex())
 
-with open('net_worth_quintiles_table.tex', 'w') as tf:
+with open(ppj("OUT_TABLES", "net_worth_quintiles_table.tex"), "wb") as tf:
      tf.write(net_worth_quintiles_table.to_latex())
      
-with open('income_deciles_table.tex', 'w') as tf:
+with open(ppj("OUT_TABLES", "income_deciles_table.tex"), "wb") as tf:
      tf.write(income_deciles_table.to_latex())
 
-with open('income_quintiles_table.tex', 'w') as tf:
+with open(ppj("OUT_TABLES", "income_quintiles_table.tex"), "wb") as tf:
      tf.write(income_quintiles_table.to_latex())
      
-with open('age_partition.tex', 'w') as tf:
+with open(ppj("OUT_TABLES", "age_partition.tex"), "wb") as tf:
      tf.write(age_partition.to_latex())
      
 ###############################################################################
@@ -112,18 +111,18 @@ sfc_clean_pd.drop(sfc_clean_pd[sfc_clean_pd.income_total >= 5*float(average_tota
 
 plt.figure()
 plt.hist(sfc_clean_pd['net_worth']/1000,bins=50)
-plt.savefig('histogram_networth.png')
+plt.savefig(ppj("OUT_FIGURES","histogram_networth.png"))
 
 plt.figure()
 plt.hist(sfc_clean_pd['income_total']/1000,bins=80)
-plt.savefig('histogram_income.png')
+plt.savefig(ppj("OUT_FIGURES","histogram_income.png"))
 
 plt.figure()
 plt.plot(np.linspace(0.0, 1.0, lorenz_income.size), lorenz_income)
 plt.plot([0,1], [0,1])
-plt.savefig('lorenz_income.png')
+plt.savefig(ppj("OUT_FIGURES","lorenz_income.png"))
 
 plt.figure()
 plt.plot(np.linspace(0.0, 1.0, lorenz_net_worth.size), lorenz_net_worth)
 plt.plot([0,1], [0,1])
-plt.savefig('lorenz_networth')
+plt.savefig(ppj("OUT_FIGURES","lorenz_networth.png")')
