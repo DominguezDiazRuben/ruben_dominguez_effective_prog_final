@@ -71,7 +71,9 @@
 \label{sec:introduction}
     Households differ along different dimensions, such age, income, wealth and asset portfolios. At the same time, an increasing literature in macroeconomics has emphasized the relevance of inequality to answer important research questions. Yet, the foundation of those analysis crucially depend on our understanding on how heterogeneiy looks like in the data. Therefore, a key step in understanding the role of inequality in macroeconomics is a detailed and granual analysis of the data that we have available.
 
-    In order to make progress in this direction, this paper uses the Survey of Consumer Finances (SFC) to provide an snapshot of the US economy in 2016 at the household level. In particular, I closely follow the methodology employed in \citet{Kuhn2016}. To start, I provide broad measures of inequality that are commonly used in the literature. More precisely, I compute the Gini coefficients for income and wealth in the sample, and show that, as expected, wealth is substantially more concentrated than income. To further verify this point graphically, I provide the estimated Lorenz curves and histograms for both variables.
+    In order to make progress in this direction, this paper uses the Survey of Consumer Finances (SFC) to provide an snapshot of the US economy in 2016 at the household level. In particular, I closely follow the methodology employed in \citet{Kuhn2016}. To start, I provide broad measures of inequality that are commonly used in the literature. More precisely, I compute the Gini coefficients for income and wealth in the sample, and show that, as expected, wealth is substantially more concentrated than income. To further emphasize this point graphically, I provide the estimated Lorenz curves and histograms for both variables. Both measures show the high skewness of the income and wealth distribution, in particular of the latter.
+
+    In a second step, I look closer to the characteristics of the households. In particular, I partition the sample along the wealth and income distribution, as well as according to the the life cycle. After subdividing the sample into age or wealth and income bins, I characterize the representative household in each group. More precisely, I provide the average wealth, income, age and main portfolio composition of the representative household in each bin. This turns out to be useful because, for example
 
 
 \section{Main Results.}
@@ -109,17 +111,20 @@ This section presents the main results of the research project.
 \end{figure}
 
 \begin{table}
+    \caption{Quantiles of the Income distribution.}
     \resizebox{\textwidth}{!}{\input{../../out/tables/income_quintiles_table}}
     \label{tab:quintilesincome}
 \end{table}
 
 
 \begin{table}
+    \caption{Quantiles of the Wealth distribution.}
     \resizebox{\textwidth}{!}{\input{../../out/tables/net_worth_quintiles_table}}
     \label{tab:quintilesnetworth}
 \end{table}
 
 \begin{table}
+    \caption{Age partition.}
     \resizebox{\textwidth}{!}{\input{../../out/tables/age_partition}}
     \label{tab:agepartition}
 \end{table}
@@ -134,14 +139,13 @@ This section presents the main results of the research project.
 \bibliography{refs}
 
 
-
-\appendix
-
 \begin{table}
+    \caption{Deciles of the Income distribution.}
     \resizebox{\textwidth}{!}{\input{../../out/tables/income_deciles_table}}
 \end{table}
 
 \begin{table}
+    \caption{Deciles of the Wealth distribution.}
     \resizebox{\textwidth}{!}{\input{../../out/tables/net_worth_deciles_table}}
 \end{table}
 
