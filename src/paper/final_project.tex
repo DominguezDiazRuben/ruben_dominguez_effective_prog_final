@@ -63,7 +63,7 @@
 \maketitle
 
 \begin{abstract}
-	This research project uses the Survey of Consumer Finances 2016 to present some summary stastitics about income and wealth inequality. In addition, it reports the average income, wealth, age and balance sheet composition of households along the income and wealth distribution, as well as over the business cycle.
+	This research project uses the Survey of Consumer Finances to provide a snapshot of the U.S. economy in 2016 at the household level. I report several measures of wealth and income inequality. Next, I take a closer look to the households, by reporting their income sources, portfolio composition and net worth along the wealth and income distribution, as well as over the life-cycle.
 \end{abstract}
 \clearpage
 
@@ -75,7 +75,7 @@
 
     In a second step, I look closer to the characteristics of the households. In particular, I partition the sample along the wealth and income distribution, as well as according to the the life cycle. After subdividing the sample into age or wealth and income bins, I characterize the representative household in each group. More precisely, I provide the average wealth, income, age and main portfolio composition of the representative household in each bin. This turns out to be useful because, for example, the income rich households are not the same as the wealth rich households and hence differ along several characteristics. 
 
-    This paper follows and builds on a large series of papers analyzing the Survey of Consumer finances (e.g. \citet{Diaz-Gimenez1997}, \citet{Diaz-Gimenez2011}), the most recent of which is \citet{Kuhn2016}, who analyzes the SFC for the 2013 wave. As emphasized earlier, the structure of the analysis largely is inspired by these previous papers. In addition, following \citet{Hintermaier2016} I also report shares of secured debd.
+    This paper follows and builds on a large series of papers analyzing the Survey of Consumer finances, the most recent of which is \citet{Kuhn2016}, who analyzes the SFC for the 2013 wave. As emphasized earlier, the structure of the analysis largely is inspired by these previous papers. In addition, following \citet{Hintermaier2016} I also report shares of secured debd.
 
     The paper paper is organized as follows. Section 2 reports the main results and Section 3 concludes.
 
@@ -83,19 +83,40 @@
 \section{Main Results.}
 \label{sec:mainresults}
 
-\subsection{Description of the data.}
+\subsection*{Description of the data.}
 
 This section presents the main results of the research project. The Survey of Consumer Finances (SFC) is a cross-sectional survey of U.S households, sponsored by the Federal Reserve Board and the Department of the Treasury, that usually takes place every three years. In the SFC 2016, 6500 households were interviewed. Although the survey usually does not track families over time and despite its rather small sample size, it is still a very valuable source of data, widely used in macroeconomics due to its detailed information. On one hand, it reports a wide range of demographic characteristics of households as well as a detailed coverage of total wealth, wealth components and income sources. On the other hand, the SFC makes an effort to oversample the upper tale of the wealth distribution, the crucial importance given the high concentration of wealth in the U.S. 
 
-\begin{figure}
+It is useful, at this point, to specify some variable definitions:
+
+\begin{enumerate}
+    \item \textbf{Net Worth}: Total assets minus total debt.
+    \begin{enumerate}
+        \item \textit{Total Assets}: is defined as the sum of financial assets and non-financial assets (which includes vehicles, residential properties, business and net equity in non-residential real state).
+
+        \item \textit{Total Debt}: consists on the sum of debt secured by residential propertia, non-secured lines of credit, credit card balances, installment loans and other debts as loans against pensions or life insurance.
+    
+    \end{enumerate}
+
+    \item \textbf{Income}: consists on the sume of labor income, business income, capital income - capital returns plus capital gains or losses -, social security and pension income, and transfers.
+
+\end{enumerate}
+
+\subsection*{Summary statistics.}
+
+Before diving into a more granular analysis, it is useful to first take a look to some broader measures of inequality. To this I focus here only on wealth and income inequality, as defined in the previous section, and leave the age dimension for the next section. To begin with, I have computed the Gini coefficients of both measures and these are approximately $0.60$ for income and $0.86$ for wealth. There highlights two things, both wealth and income and highly concentrated but the wealth tends to be much more inequally distributed than income.
+
+\begin{figure}[H]
     \caption{Lorenz Curve for Income}
     
     \includegraphics[width=\textwidth]{../../out/figures/lorenz_income}
     \label{fig:lorincome}
 \end{figure}
 
+To further emphasize this point I also report the associated Lorenz curves for income and networth, displayed in Figure \ref*{fig:lorincome} and Figure \ref*{fig:lornetworth} respectively. The $45$ degree line reflects an economy where income and wealth are evely distributed across the population. The larger is the area between this line and the blue line, the larger more unevenly distributed are wealth or income. As we can see graphically, net worth tend to be much more concentrated than income, confirming the previous intuition from the Gini coefficients. In particular, we can see that, the top $20$ percent of the wealth distribution owns approximately $80$ per cent of the total wealth. On the other hand, the top $20$ percent of the income distribution only owns between the $50$ and $60$ percent of the income. 
 
-\begin{figure}
+
+\begin{figure}[H]
     \caption{Lorenz Curve for Net Worth}
     
     \includegraphics[width=\textwidth]{../../out/figures/lorenz_networth}
@@ -103,32 +124,61 @@ This section presents the main results of the research project. The Survey of Co
 
 \end{figure}
 
-\begin{figure}
+To conclude this subsection I also report the histograms for income and wealth in Figures \ref*{fig:histincome} and \ref*{fig:histnetworth} respectively. The horizontal axis are thousands of dollars and the vertical axis reports the frequency. 
+
+\begin{figure}[H]
     \caption{Histogram for Income}
     
     \includegraphics[width=\textwidth]{../../out/figures/histogram_income}
     \label{fig:histincome}
 \end{figure}
 
-\begin{figure}
+Comparing both figures we see that both distributions display a high skewness, more pronounced in the wealth distribution, that features a long thick right tail. Furthermore, it is noticeable the large fraction of the population that indeed holds non-positive wealth. It is worth emphasizing at this point that this measure refers to net worth, that is total assets minus total debt. As we will see, this observation comes from the fact that, although most households hold significant amounts of assets they also tend to be hihgly indebted, resulting in most cases in a close to zero net worth.
+
+\begin{figure}[H]
     \caption{Histogram for Net Worth}
     
     \includegraphics[width=\textwidth]{../../out/figures/histogram_networth}
     \label{fig:histnetworth}
 \end{figure}
 
-\begin{table}
+\subsubsection*{A closer look to the data.}
+
+I turn next to provide a more detailed description of the data. Towards this end, I first partition the sample across the income distribution. Table \ref*{tab:quintilesincome} divides the sample into quantiles of the income distribution, and to allow to even a closer look, Table \ref*{tab:decilesincome} provides the deciles of the income distribution. As we can see, the top quintiles of the income distribution has almost forty times the income of the bottom $20$ percent of the distribution, and the ratio of wealth between both groups is almost ninety. Both are, then, highly correlated but we observe sharper differences for wealth.
+
+\begin{table}[H]
     \caption{Quantiles of the Income distribution.}
     \resizebox{\textwidth}{!}{\input{../../out/tables/income_quintiles_table}}
     \label{tab:quintilesincome}
 \end{table}
 
+Perhaps surprisingly, we see that all quantiles of the income distribution are quite homogeneous in term of age, with all of them being in their fifties, and the picture does not change much if look to the deciles. Yet, they sharply differ in the sources of their income. The bottom quintile of the distribution derives most of its income from social security, retirement income and transfers. In the middle quantiles, labor income tends to dominate, and the top of the distribution features a high share of business income in their total income. Next, we also observe that the differences in their portfolio composition - as fraction of net worth - do not terribly differ. All quintiles of the distribution hold sizable financial assets. The most clear pattern arises from home equity, which is clearly declining over the income distribution. These patterns stand out even more clearly if we look to the deciles of the distribution. 
 
-\begin{table}
+\begin{table}[H]
+    \caption{Deciles of the Income distribution.}
+    \resizebox{\textwidth}{!}{\input{../../out/tables/income_deciles_table}}
+    \label{tab:decilesincome}
+\end{table}
+
+I move now to analyze the wealth distribution. Towards thind end, Tables \ref*{tab:quintilesnetworth} and \ref*{tab:decilesnetworth} report the quintiles and deciles of the net worth distribution, respectively. We observe that bottom $20$ percent of the distribution holds indeed negative wealth, arising from high levels of debt, while the top of the distribution holds substantially more wealth than the top of the income distribution. From this observation, we see that actually the income poor or income rich are actually different from the wealth poor or wealth rich. By comparison both set of tables, we see that the income poor hold more wealth but less income than the wealth poor. On the other hand, the wealth rich hold more wealth but approximately have the same income as the top of the income distribtuion.
+
+\begin{table}[H]
     \caption{Quantiles of the Wealth distribution.}
     \resizebox{\textwidth}{!}{\input{../../out/tables/net_worth_quintiles_table}}
     \label{tab:quintilesnetworth}
 \end{table}
+
+In this case, however, we can observe a clear life cycle pattern. The bottom of the wealth distribution tend to be populated by, on average, younger households than the top of the distribution with an average difference of $20$ years. Next, we can see here stark differences in the income sources across the wealth distribution. The bottom $80$ percent of the wealth distribution derives almost entirely their income from labor income, with a smaller contribution of social security and retirement income. On the other hand, labor income only amount to half of the total income of top quintiles. The other half, is roughly equally split between capital income and business income. These differences are even more clear and striking if look to the deciles of the wealth distribution.
+
+Finally, we observe clear differences in their portfolio composition. The bottom of the distribution tends to be highly levered, holding high amounts of secured debt, which is sharply decreasing over the distribution. Second, we can see that for the quantiles in the middle, home equity represents the main assets, whereas for the top quintiles net home equity looses relevance in favor of financial assets.
+
+\begin{table}
+    \caption{Deciles of the Wealth distribution.}
+    \resizebox{\textwidth}{!}{\input{../../out/tables/net_worth_deciles_table}}
+    \label{tab:decilesnetworth}
+\end{table}
+
+To conclude, I divide the sample into age groups, shown in Table \ref*{tab:agepartition}. Not surprisingly, this partition shows the more clear patterns for the different variables. As expected, income follows a hump-shaped profile over the life-cyle, peaking right before retirement. Net worth, on the other hand is almost monotonically increasing in age, and even the oldest households tend to keep sizable amounts of wealth and not decrease savings. Turning to income sources, we can see that relevance of labor income is declining over the life-cycle, in favor of business and capital capital income and retirement income for the last age group. Finally, what regards the portfolio composition of the different age groups, we see that young households tend to hold large amounts of debt, that are slowly reduced as they age. The share of home equity, on the other hand, tend to decrease in favor of a financial assets.
 
 \begin{table}
     \caption{Age partition.}
@@ -136,8 +186,14 @@ This section presents the main results of the research project. The Survey of Co
     \label{tab:agepartition}
 \end{table}
 
-\section{Conclusions.}
 
+\section{Conclusions.}
+ 
+ In this research project I have used the Survey of Consumer Finances to provide a summary of the characteristics of U.S households along different dimensions for the year 2016. In a first step I have provided broader measures of inequality to show that both income and wealth are highly concentrated, specially in the case of net worth. 
+
+ In a second step, I took a closer look to households across the wealth and income distribution, as well as over the life-cycle. First, I have provided the main profiles of income and net worth for households along these groups. Second, I have reported that the income sources of households are widely heterogenous across these distributions and over the life-cycle. Finally, I have collected the main characteristics of the balance sheets of households, with special emphasis on home equity and secured debt.
+
+ In future research it would be interesting to take a time perspective and compare these results with previous waves of the Survey of Consumer finances. These would provide us with a better understanding of how the main measures of inequality have changed over time and specially, whether the portfolio composition of households have changed following the debt boom experienced in the last decades. 
 
 
 
@@ -146,15 +202,7 @@ This section presents the main results of the research project. The Survey of Co
 \bibliography{refs}
 
 
-\begin{table}
-    \caption{Deciles of the Income distribution.}
-    \resizebox{\textwidth}{!}{\input{../../out/tables/income_deciles_table}}
-\end{table}
 
-\begin{table}
-    \caption{Deciles of the Wealth distribution.}
-    \resizebox{\textwidth}{!}{\input{../../out/tables/net_worth_deciles_table}}
-\end{table}
 
 % The chngctr package is needed for the following lines.
 % \counterwithin{table}{section}

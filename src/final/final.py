@@ -60,6 +60,9 @@ sfc_income_sort = data_to_output['sfc_clean_sort_income_total']
 lorenz_net_worth = data_to_output['lorenz_net_worth']
 lorenz_income = data_to_output['lorenz_income_total']
 
+gini_networth = data_to_output['gini_net_worth']
+gini_income   = data_to_output['gini_income_total']
+
 ###############################################################################
 ############### Prepare Tables to present #####################################
 ###############################################################################
@@ -133,6 +136,11 @@ net_worth_quintiles_table.columns = rename_quintiles
 income_quintiles_table.columns = rename_quintiles
 age_partition_table.columns = rename_age
 
+# -- Save the gini coefficients to report in text.
+
+gini_pd = pd.DataFrame(data=([gini_income,gini_networth]))
+
+
 
 # --- Save to latex
 
@@ -150,6 +158,9 @@ with open(ppj("OUT_TABLES", "income_quintiles_table.tex"), "w") as tf:
      
 with open(ppj("OUT_TABLES", "age_partition.tex"), "w") as tf:
      tf.write(age_partition_table.to_latex())
+
+with open(ppj("OUT_TABLES", "ginis.tex"), "w") as tf:
+     tf.write(gini_pd.to_latex())
      
 ###############################################################################
 ############### Prepare Histogram and Lorez  ##################################
