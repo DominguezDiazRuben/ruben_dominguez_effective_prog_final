@@ -1,8 +1,9 @@
 
 """
+
 This module called *analysis* does the *analysis step*.
 
-First, it loads the data generated in the *data_management step*. These
+First, the module loads the data generated in the *data_management step*. These
 are the data that we are going to work with.
 
 The module makes use repeatedly of functions stored in the *myfunctions.py*
@@ -32,6 +33,7 @@ The module can be broadly subdivided into three different parts.
 
 Finally, it bundles all the data into a dataframe called *data_to_output* which contains the
 inputs for the *final step*.
+
 """
 
 
