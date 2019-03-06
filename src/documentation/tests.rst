@@ -1,13 +1,13 @@
-.. _test_functions:
+.. _tests_functions:
 
 ************************************
 Tests
 ************************************
 
-The directory *src.test_functions* contains test for the functions.
+The directory *src.tests_functions* contains test for the functions.
 
 test_myfunctions.py
-=================
+===================
 
-.. automodule:: src.analysis.analysis
+.. automodule:: src.tests_functions.test_myfunctions
     :members:

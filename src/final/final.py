@@ -1,5 +1,5 @@
 """
-This module called *final* does the *analysis step*.
+This module called *final* does the *final step*.
 
 First, it loads the data generated in the *analysis step* and unpacks it appropiately. 
 
@@ -19,6 +19,7 @@ The module can be broadly subdivided into two different parts.
 		* Quintiles of Net Worth Distribution.
 		* Quintiles of Income Distribution.
 		* Age Distribution.
+		* Gini Coefficients.
 
 	* Prepare Histograms and Lorenz: it generates two histograms and two Lorenz curves 
 	  that are reported in the paper:
@@ -26,6 +27,8 @@ The module can be broadly subdivided into two different parts.
 		* Histogram of Net Worth.
 		* Lorenz curve of Income.
 		* Lorenz curve of Net Worth.
+
+Figures and tables are stored in the folders *OUT_FIGURES* and *OUT_TABLES*, respectively.
 
 
 """
@@ -104,7 +107,7 @@ age_partition_table = age_partition_table.astype(int)
 
 # -- Rename columns to present.
 
-rename_columns = ['Net Worth','Income','Age','Wages (% of income)',
+rename_columns = ['Net Worth (Thousands of $)','Income (Thousands of $)','Age','Wages (% of income)',
                   'Business Income (% of income)','Capital Income (% of income)'
                   ,'Transfers Income (% of income)','SS and Retirement Income (% of income)',
                   'Financial Assets (% Net Worth)','Home Equity (% Net Worth)',

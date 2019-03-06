@@ -7,8 +7,8 @@ folder *original_data*.
 
 Second, since the original dataset it large, the 
 goal is to keep the variables of interest so that we don't have
-to carry out the whole analysis with a heavy dataframe. The are contained
-in my_variables.
+to carry out the whole analysis with a heavy dataframe. These are contained
+in the variables called *my_variables*.
 
 Third, it renames the variables that we are going to use to 
 more user-friendly names, such that we can access them more

@@ -2,15 +2,15 @@
 This module called *test_myfunctions.py* contains several tests for the functions contained
 in the module *myfunctions.py*. First, it defines contains two setup functions called by the
 tests:
-    * setup_mytest: generates the artifical dataset sfc_test that is used in the tests.
-    * expected_ouptut: in creates a dataframe containing the results that should come out of
-    the functions.
+     * setup_mytest: generates the artifical dataset sfc_test that is used in the tests.
+     * expected_ouptut: in creates a dataframe containing the results that should come out of
+       the functions.
 Next, it runs four tests:
-    * test_generate_bins: tests the function generate_bins.
-    * test_generate_densities: tests the function generate_densities.
-    * test_generate_gini: tests the function generate_gini. Checks both the Gini Coefficient
-    and the Lorenz Curve.
-    * test_generate_averages: tests the function generate_averages.
+     * test_generate_bins: tests the function generate_bins.
+     * test_generate_densities: tests the function generate_densities.
+     * test_generate_gini: tests the function generate_gini. Checks both the Gini Coefficient
+       and the Lorenz Curve.
+     * test_generate_averages: tests the function generate_averages.
 
 """
 import sys

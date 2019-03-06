@@ -20,18 +20,18 @@ The module can be broadly subdivided into three different parts.
     sample.
 
   * Compute Gini and Lorenz Curve: using data from the previous part, it calls the function
-    generate_gini which returns the Gini coefficients and Lorenz curves for income and
+    *generate_gini* which returns the Gini coefficients and Lorenz curves for income and
     wealth.
 
   * Compute averages by partition: using the partitions generated in the first part, it
     generates the averages of variables for each cell of the partition. That is, it will 
     compute what is the average income, net worth, debt... for age group, quantile/decile
     of the income/wealth distribution and so on. It makes use of the function *generate_averages*.
-    Finally, it creates some new variables as ratios. 
+    Finally, it creates some new variables as ratios of previously defined variables. 
 
 
 Finally, it bundles all the data into a dataframe called *data_to_output* which contains the
-inputs for the final step.
+inputs for the *final step*.
 """
 
 
