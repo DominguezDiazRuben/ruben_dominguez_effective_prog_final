@@ -8,10 +8,10 @@ plots such that they can be included into the .tex file right the way.
 
 The module can be broadly subdivided into two different parts.
 
-	* Prepare tables to present: this part generates the tables to included in the paper.
+	* Prepare tables to present: this part generates the tables to be included in the paper.
 	  First, it selects the variables that we want to report in the table (variables_to_keep).
-	  Second, it express income and net worth in thousands so that they fit nicely in the table.
-	  Third, due to the large amount of decimals is converts values to integers. Fourth, it 
+	  Second, it expresses income and net worth in thousands so that they fit nicely in the table.
+	  Third, due to the large amount of decimals it converts values to integers. Fourth, it 
 	  renames variables as we want them to appear in the paper. Fith, it exports to latex the 
 	  following tables:
 		* Deciles of Net Worth Distribution.

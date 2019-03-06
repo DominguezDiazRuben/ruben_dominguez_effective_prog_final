@@ -18,7 +18,7 @@ for the final results. These are:
    * income_total: a broader measure of total income.
    * income_capital: a measure of total capital income.
    * net_home_equity: total housing assets minus total secured debt.
-   * deb_non_secured: total debt minus secured debt.
+   * debt_non_secured: total debt minus secured debt.
 
 Finally it saves all these elements together into
 a dataframe called *sfc_clean_pd* and saves it to the folder
