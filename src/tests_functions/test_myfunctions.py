@@ -81,6 +81,8 @@ def test_generate_averages():
     actual_average = generate_averages(sfc_test,'hh_weights')
     assert_frame_equal(actual_average, expected_out['average_total'])
 
+
+
 if __name__ == '__main__':
     status = pytest.main([sys.argv[1]])
     sys.exit(status)
