@@ -1,5 +1,5 @@
 """
-The module *myfunctions* contains the functions used during the analysis step-.
+The module *myfunctions* contains the functions used during the *analysis step*.
 
 """
 
