@@ -42,7 +42,7 @@ import matplotlib.pyplot as plt
 
 # -- Read data.
 data_to_output = pkl.load(open(ppj("OUT_ANALYSIS","data_to_output.pkl"),"rb"))
-# -- Prepare dataframes as if where passed as latex tables
+
 
 # -- Read out dictionary
 
@@ -96,7 +96,7 @@ income_quintiles_table[variables_in_thousands] = income_quintiles_table[variable
 income_deciles_table[variables_in_thousands] = income_deciles_table[variables_in_thousands]/1000 
 age_partition_table[variables_in_thousands] = age_partition_table[variables_in_thousands]/1000
 
-# -- Present values as integers.age_partition_table
+# -- Present values as integers.
 
 net_worth_quintiles_table = net_worth_quintiles_table.astype(int)
 net_worth_deciles_table = net_worth_deciles_table.astype(int)
@@ -169,7 +169,7 @@ with open(ppj("OUT_TABLES", "ginis.tex"), "w") as tf:
 ############### Prepare Histogram and Lorez  ##################################
 ###############################################################################
 
-# -- drop super wealthy guys to make the histogram nice
+# -- drop super wealthy guys to make the histogram nice. Kuhn and Rios-Rull (2016) do the same. 
 
 sfc_clean_pd.drop(sfc_clean_pd[sfc_clean_pd.net_worth >= 5*float(average_total['net_worth'])].index,inplace=True)
 sfc_clean_pd.drop(sfc_clean_pd[sfc_clean_pd.income_total >= 5*float(average_total['income_total'])].index,inplace=True)
