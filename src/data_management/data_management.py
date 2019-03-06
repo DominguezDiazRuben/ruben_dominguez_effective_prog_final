@@ -7,15 +7,14 @@ folder *original_data*.
 
 Second, since the original dataset it large, the 
 goal is to keep the variables of interest so that we don't have
-to carry out the whole analysis with a heavy dataframe. These are contained
-in the variables called *my_variables*.
+to carry out the whole analysis with a heavy dataframe.
 
 Third, it renames the variables that we are going to use to 
 more user-friendly names, such that we can access them more
 easily without need to look for them in manual repeatedly.
 
 Fourth, it generates some additional variables that are interesting
-for the final results. There are:
+for the final results. These are:
    * income_total: a broader measure of total income.
    * income_capital: a measure of total capital income.
    * net_home_equity: total housing assets minus total secured debt.
@@ -37,31 +36,6 @@ from bld.project_paths import project_paths_join as ppj
 
 sfc16 = pd.read_stata(ppj("IN_DATA","sfc2016.dta"))
 
-
-# -- Variables that we want to work with.
-
-my_variables =['income_wage',
-                           'income_bussiness',
-                           'income_dividendsinterests',
-                           'income_capitalgains',
-                           'income_retirementincome',
-                           'income_transfers',
-                           'income_capital',
-                           'income_total',
-                           'net_worth',
-                           'assets_total',
-                           'assets_financial',
-                           'assets_nfin',
-                           'assets_house_main',
-                           'assets_house_other',
-                           'debt_total',
-                           'debt_secured',
-                           'debt_nonsecured',
-                           'net_home_equity',
-                           'hh_age',
-                           'hh_employment_status',
-                           'hh_id',
-                           'hh_weight']
 # -- Income variables.
 
 income_wage = sfc16['wageinc']
@@ -124,12 +98,6 @@ sfc_clean_dict = {'income_wage':income_wage,
 sfc_clean_pd = pd.DataFrame(sfc_clean_dict)
 sfc_clean_pd.set_index('hh_id',inplace=True)
 
-# --  Eliminate observations with non-positive income or wealth, for simplicity
-
-#sfc_clean_pd.drop(sfc_clean_pd[sfc_clean_pd.net_worth <= 0].index,inplace = True)
-#sfc_clean_pd.drop(sfc_clean_pd[sfc_clean_pd.income_total <= 0].index,inplace = True)
-#sfc_clean_pd.drop(sfc_clean_pd[sfc_clean_pd.hh_age <= 25].index,inplace = True)
-#sfc_clean_pd.drop(sfc_clean_pd[sfc_clean_pd.hh_age > 80].index,inplace = True)
 
 # -- Save to pickle.
 
